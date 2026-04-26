@@ -1,0 +1,65 @@
+\chapter*{Power Series and Taylor Series}
+\addcontentsline{toc}{chapter}{Power Series and Taylor Series}
+
+\section*{Power Series}
+
+A power series centered at $a$ has the form
+$$\sum_{n=0}^{\infty} c_n(x-a)^n.$$ 
+For each fixed $x$, this becomes a numerical series, so convergence depends on $x$.
+
+\begin{definition}[Radius and interval of convergence]
+There exists a number $R\in[0,\infty]$ such that the power series converges for
+$$|x-a|<R$$
+and diverges for
+$$|x-a|>R.$$ 
+The number $R$ is the \textbf{radius of convergence}. Endpoints must be tested separately.
+\end{definition}
+
+In many problems, the ratio test is the easiest way to find $R$.
+
+\section*{Differentiation and Integration of Power Series}
+
+Inside the interval of convergence, power series behave like polynomials term by term:
+\begin{align*}
+\frac{d}{dx}\sum_{n=0}^{\infty} c_n(x-a)^n &= \sum_{n=1}^{\infty} n c_n(x-a)^{n-1}, \\
+\int \sum_{n=0}^{\infty} c_n(x-a)^n\,dx &= C + \sum_{n=0}^{\infty} \frac{c_n}{n+1}(x-a)^{n+1}.
+\end{align*}
+
+This makes power series an efficient tool for producing new expansions from known ones.
+
+\section*{Taylor and Maclaurin Series}
+
+Suppose $f$ can be represented near $x=a$ by a power series
+$$f(x)=\sum_{n=0}^{\infty} c_n(x-a)^n.$$ 
+Differentiating repeatedly and evaluating at $x=a$ gives
+$$c_n = \frac{f^{(n)}(a)}{n!}.$$ 
+So we obtain the Taylor series:
+
+\begin{definition}[Taylor series]
+The Taylor series of $f$ centered at $a$ is
+$$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n,$$
+provided the series converges to $f(x)$.
+\end{definition}
+
+When $a=0$, this is called the \textbf{Maclaurin series}.
+
+\section*{Important Standard Expansions}
+
+The most frequently used series are:
+\begin{align*}
+\frac{1}{1-x} &= \sum_{n=0}^{\infty} x^n, \qquad |x|<1, \\
+ e^x &= \sum_{n=0}^{\infty} \frac{x^n}{n!}, \\
+\sin x &= \sum_{n=0}^{\infty} (-1)^n\frac{x^{2n+1}}{(2n+1)!}, \\
+\cos x &= \sum_{n=0}^{\infty} (-1)^n\frac{x^{2n}}{(2n)!}, \\
+\ln(1+x) &= \sum_{n=1}^{\infty} (-1)^{n-1}\frac{x^n}{n}, \qquad -1<x\le 1.
+\end{align*}
+
+\section*{Taylor Polynomials}
+
+The degree-$n$ Taylor polynomial at $a$ is
+$$T_n(x)=\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^k.$$ 
+It gives a local polynomial approximation to $f$ near $a$.
+
+\begin{remark}
+In practice, Taylor polynomials are useful because complicated functions can be approximated by low-degree polynomials, which are much easier to compute and analyze.
+\end{remark}

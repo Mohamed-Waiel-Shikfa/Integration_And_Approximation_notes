@@ -1,0 +1,136 @@
+\chapter*{Integration Techniques and Improper Integrals}
+\addcontentsline{toc}{chapter}{Integration Techniques and Improper Integrals}
+
+\section*{A Strategy for Integration}
+
+A recurring theme in this course is that there is \emph{no single universal trick} for evaluating integrals. Instead, one identifies the structure of the integrand and then chooses the method that simplifies that structure the most.
+
+\begin{remark}[Useful decision rule]
+When you see an integral, ask the following questions in order:
+\begin{enumerate}[label=\arabic*.]
+    \item Is there an obvious substitution $u=g(x)$ whose derivative also appears?
+    \item Is the integrand a product where one factor becomes simpler after differentiation? If so, try integration by parts.
+    \item Is the integrand a rational function $P(x)/Q(x)$? If so, try algebraic simplification or partial fractions.
+    \item Does the integrand contain powers of $\sin x$, $\cos x$, $\tan x$, or $\sec x$? Then trigonometric identities may help.
+    \item Does a square root such as $\sqrt{a^2-x^2}$, $\sqrt{a^2+x^2}$, or $\sqrt{x^2-a^2}$ appear? Then trigonometric substitution is often natural.
+    \item Is the interval infinite or does the integrand blow up? Then the integral is probably improper and must be treated as a limit.
+\end{enumerate}
+\end{remark}
+
+\section*{Trigonometric Integrals}
+
+Trigonometric integrals are integrals containing powers or products of trigonometric functions. The goal is usually to convert the integrand into a form where substitution works directly.
+
+\subsection*{Basic identities}
+
+The most common identities are
+$$\sin^2 x + \cos^2 x = 1, \qquad 1 + \tan^2 x = \sec^2 x, \qquad 1 + \cot^2 x = \csc^2 x.$$ 
+Half-angle identities are also useful:
+$$\sin^2 x = \frac{1-\cos 2x}{2}, \qquad \cos^2 x = \frac{1+\cos 2x}{2}.$$ 
+
+\subsection*{Powers of $\sin x$ and $\cos x$}
+
+\begin{itemize}
+    \item If the power of sine is odd, save one factor of $\sin x$ and convert the rest using $\sin^2 x = 1-\cos^2 x$.
+    \item If the power of cosine is odd, save one factor of $\cos x$ and convert the rest using $\cos^2 x = 1-\sin^2 x$.
+    \item If both powers are even, half-angle identities are often the cleanest choice.
+\end{itemize}
+
+For example,
+$$\int \sin^3 x\cos^2 x\,dx = \int (1-\cos^2 x)\cos^2 x\sin x\,dx.$$ 
+With $u=\cos x$ and $du=-\sin x\,dx$, this becomes a polynomial integral.
+
+\subsection*{Powers of $\tan x$ and $\sec x$}
+
+\begin{itemize}
+    \item If the power of secant is even, save a factor $\sec^2 x$ and use $1+\tan^2 x=\sec^2 x$.
+    \item If the power of tangent is odd, save a factor $\sec x\tan x$ and use $\tan^2 x=\sec^2 x-1$.
+\end{itemize}
+
+A standard example is
+$$\int \tan^3 x\sec^4 x\,dx = \int \tan^3 x\sec^2 x\,\sec^2 x\,dx,$$
+then set $u=\tan x$.
+
+\section*{Trigonometric Substitution}
+
+Trigonometric substitution is designed for radicals that come from the Pythagorean identities.
+
+\begin{definition}[Main substitutions]
+For constants $a>0$, the standard substitutions are
+\begin{align*}
+\sqrt{a^2-x^2} &\quad \Rightarrow \quad x=a\sin\theta, \\
+\sqrt{a^2+x^2} &\quad \Rightarrow \quad x=a\tan\theta, \\
+\sqrt{x^2-a^2} &\quad \Rightarrow \quad x=a\sec\theta.
+\end{align*}
+These choices make the radical collapse through a trig identity.
+\end{definition}
+
+For instance, if $x=a\sin\theta$, then
+$$\sqrt{a^2-x^2} = \sqrt{a^2-a^2\sin^2\theta} = a\cos\theta.$$ 
+This transforms the radical expression into a product of simpler trig functions.
+
+\begin{remark}
+After integrating in $\theta$, always convert the answer back to the original variable $x$, often using a right triangle.
+\end{remark}
+
+\section*{Partial Fractions}
+
+If the integrand is a rational function
+$$R(x)=\frac{P(x)}{Q(x)},$$
+then partial fractions can reduce the integral to a sum of simpler logarithmic and arctangent forms.
+
+\subsection*{Step 1: Properness}
+
+If $\deg P \ge \deg Q$, first perform polynomial long division. Partial fractions only applies directly to \textbf{proper} rational functions where $\deg P < \deg Q$.
+
+\subsection*{Step 2: Factor the denominator}
+
+Factor $Q(x)$ into linear and irreducible quadratic factors.
+
+\subsection*{Step 3: Decompose}
+
+Typical forms are:
+\begin{align*}
+\frac{P(x)}{(x-a)(x-b)} &= \frac{A}{x-a}+\frac{B}{x-b}, \\
+\frac{P(x)}{(x-a)^n} &= \frac{A_1}{x-a}+\frac{A_2}{(x-a)^2}+\cdots+\frac{A_n}{(x-a)^n}, \\
+\frac{P(x)}{x^2+bx+c} &= \frac{Ax+B}{x^2+bx+c}.
+\end{align*}
+
+Once the constants are found, integrate term by term using
+$$\int \frac{1}{x-a}\,dx = \ln|x-a|+C$$
+and, after completing the square when needed,
+$$\int \frac{1}{x^2+a^2}\,dx = \frac{1}{a}\arctan\!\left(\frac{x}{a}\right)+C.$$ 
+
+\section*{Improper Integrals}
+
+Improper integrals arise in two main situations.
+
+\begin{definition}[Type I improper integral]
+If the interval is unbounded, then
+$$\int_a^{\infty} f(x)\,dx := \lim_{b\to\infty}\int_a^b f(x)\,dx,$$
+provided the limit exists.
+\end{definition}
+
+\begin{definition}[Type II improper integral]
+If $f$ is unbounded near an endpoint or interior point $c$, then define the integral by a limit, for example
+$$\int_a^b f(x)\,dx := \lim_{t\to b^-}\int_a^t f(x)\,dx$$
+when $f$ is unbounded at $b$.
+\end{definition}
+
+If the required limit exists and is finite, the improper integral \textbf{converges}; otherwise, it \textbf{diverges}.
+
+\subsection*{The $p$-test for improper integrals}
+
+A foundational example is
+$$\int_1^{\infty} \frac{1}{x^p}\,dx.$$ 
+For $p\neq 1$,
+$$\int_1^{\infty} x^{-p}\,dx = \lim_{b\to\infty}\left[\frac{x^{1-p}}{1-p}\right]_1^b.$$ 
+Therefore:
+\begin{itemize}
+    \item it converges if $p>1$,
+    \item it diverges if $p\le 1$.
+\end{itemize}
+
+\begin{remark}
+This $p$-test later reappears in series as the benchmark for the convergence of $\sum 1/n^p$.
+\end{remark}

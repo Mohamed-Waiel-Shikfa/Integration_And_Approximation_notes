@@ -1,0 +1,55 @@
+\chapter*{Polar Coordinates and Polar Curves}
+\addcontentsline{toc}{chapter}{Polar Coordinates and Polar Curves}
+
+\section*{Polar Coordinates}
+
+In polar coordinates, a point is represented by $(r,\theta)$, where $r$ is the directed distance from the origin and $\theta$ is the angle measured from the positive $x$-axis.
+
+The conversion formulas are
+$$x=r\cos\theta, \qquad y=r\sin\theta, \qquad r^2=x^2+y^2.$$ 
+
+Polar coordinates are not unique. For example,
+$$(r,\theta), \qquad (r,\theta+2\pi), \qquad (-r,\theta+\pi)$$
+all describe the same point.
+
+\section*{Graphing Polar Curves}
+
+A polar curve is given by an equation of the form
+$$r=f(\theta).$$ 
+To sketch it effectively, one usually studies:
+\begin{itemize}
+    \item symmetry,
+    \item intercepts and zeros of $r$,
+    \item the maximum and minimum values of $r$,
+    \item the behavior over one full period.
+\end{itemize}
+
+Common examples include circles, roses, and cardioids such as
+$$r=a(1+\sin\theta), \qquad r=a(1+\cos\theta).$$ 
+
+\section*{Area in Polar Coordinates}
+
+When $\alpha\le \theta\le \beta$, the area enclosed by the polar curve $r=f(\theta)$ is
+$$A = \frac12\int_{\alpha}^{\beta} r^2\,d\theta.$$ 
+
+\begin{remark}
+This formula comes from approximating the region by thin sectors of area
+$\frac12 r^2\Delta\theta$.
+\end{remark}
+
+\section*{Arc Length in Polar Coordinates}
+
+If $r=f(\theta)$ is differentiable, the arc length from $\theta=\alpha$ to $\theta=\beta$ is
+$$L = \int_{\alpha}^{\beta} \sqrt{r^2+\left(\frac{dr}{d\theta}\right)^2}\,d\theta.$$ 
+
+This formula is analogous to the parametric formula because the polar curve can be rewritten parametrically as
+$$x=r(\theta)\cos\theta, \qquad y=r(\theta)\sin\theta.$$ 
+
+\section*{Summary of the Unit}
+
+The final part of the course broadens the language of calculus:
+\begin{itemize}
+    \item parametric equations describe curves using a parameter,
+    \item polar coordinates describe points using distance and angle,
+    \item derivatives, areas, and lengths all adapt naturally to these new representations.
+\end{itemize}

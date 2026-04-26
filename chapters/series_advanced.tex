@@ -1,0 +1,79 @@
+\chapter*{Absolute Convergence, Ratio Test, Root Test, and Alternating Series}
+\addcontentsline{toc}{chapter}{Absolute Convergence, Ratio Test, Root Test, and Alternating Series}
+
+\section*{Absolute Convergence}
+
+\begin{definition}
+A series $\sum a_n$ is \textbf{absolutely convergent} if
+$$\sum |a_n|$$
+converges.
+\end{definition}
+
+\begin{theorem}
+If a series converges absolutely, then it converges.
+\end{theorem}
+
+If $\sum a_n$ converges but $\sum |a_n|$ diverges, then the series is called \textbf{conditionally convergent}.
+
+\section*{The Ratio Test}
+
+The ratio test is useful when factorials or exponentials appear.
+
+\begin{theorem}[Ratio Test]
+Let $\sum a_n$ be a series with $a_n\neq 0$ eventually, and define
+$$L = \lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|.$$ 
+Then:
+\begin{itemize}
+    \item if $L<1$, the series converges absolutely,
+    \item if $L>1$ or $L=\infty$, the series diverges,
+    \item if $L=1$, the test is inconclusive.
+\end{itemize}
+\end{theorem}
+
+Typical examples include
+$$\sum \frac{n!}{3^n}, \qquad \sum \frac{x^n}{n!}, \qquad \sum \frac{2^n}{n^3}.$$ 
+
+\section*{The Root Test}
+
+The root test is often cleaner when the $n$th power is built directly into the terms.
+
+\begin{theorem}[Root Test]
+Let
+$$L = \lim_{n\to\infty}\sqrt[n]{|a_n|}.$$ 
+Then:
+\begin{itemize}
+    \item if $L<1$, the series converges absolutely,
+    \item if $L>1$, the series diverges,
+    \item if $L=1$, the test is inconclusive.
+\end{itemize}
+\end{theorem}
+
+This is particularly convenient for terms like $(\frac{2n}{3n+1})^n$.
+
+\section*{Alternating Series}
+
+An alternating series has the form
+$$\sum_{n=1}^{\infty} (-1)^{n-1}b_n \qquad \text{or} \qquad \sum_{n=1}^{\infty} (-1)^n b_n,$$
+where $b_n\ge 0$.
+
+\begin{theorem}[Alternating Series Test]
+If
+\begin{enumerate}[label=\arabic*.]
+    \item $b_n\ge 0$,
+    \item $b_{n+1}\le b_n$ for all sufficiently large $n$,
+    \item $\lim_{n\to\infty} b_n = 0$,
+\end{enumerate}
+then the alternating series converges.
+\end{theorem}
+
+\subsection*{Error estimate}
+
+If $S$ is the exact sum and $S_N$ is the $N$th partial sum, then for an alternating series satisfying the test,
+$$|S-S_N| \le b_{N+1}.$$ 
+So the first omitted term bounds the error.
+
+\begin{remark}
+A convergent alternating series need not converge absolutely. The classic example is the alternating harmonic series
+$$\sum_{n=1}^{\infty} (-1)^{n-1}\frac1n,$$
+which converges conditionally.
+\end{remark}

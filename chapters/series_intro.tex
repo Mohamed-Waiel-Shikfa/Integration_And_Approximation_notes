@@ -1,0 +1,56 @@
+\chapter*{Infinite Series}
+\addcontentsline{toc}{chapter}{Infinite Series}
+
+\section*{From Sequences to Series}
+
+An infinite series is the sum of infinitely many terms:
+$$\sum_{n=1}^{\infty} a_n = a_1+a_2+a_3+\cdots$$
+But this sum is not interpreted directly. Instead, we study the sequence of \textbf{partial sums}
+$$s_N = \sum_{n=1}^{N} a_n.$$ 
+
+\begin{definition}[Convergence of a series]
+The series $\sum a_n$ converges if the sequence of partial sums $\{s_N\}$ converges to a finite limit $S$:
+$$\lim_{N\to\infty} s_N = S.$$ 
+In that case, we write
+$$\sum_{n=1}^{\infty} a_n = S.$$ 
+Otherwise, the series diverges.
+\end{definition}
+
+\section*{Geometric Series}
+
+The most important basic model is the geometric series
+$$\sum_{n=0}^{\infty} ar^n = a+ar+ar^2+\cdots$$
+with partial sums
+$$s_N = a\frac{1-r^{N+1}}{1-r}, \qquad r\neq 1.$$ 
+
+Taking limits gives:
+\begin{theorem}[Geometric series test]
+The geometric series converges if and only if $|r|<1$. In that case,
+$$\sum_{n=0}^{\infty} ar^n = \frac{a}{1-r}.$$ 
+If $|r|\ge 1$, the series diverges.
+\end{theorem}
+
+This explains Zeno-type sums such as
+$$\frac12+\frac14+\frac18+\cdots = 1.$$ 
+
+\section*{Telescoping Series}
+
+A telescoping series is one in which large cancellations occur between consecutive partial sums. A standard pattern is
+$$\sum_{n=1}^{\infty}(b_n-b_{n+1}).$$
+Then
+$$s_N = (b_1-b_2)+(b_2-b_3)+\cdots+(b_N-b_{N+1}) = b_1-b_{N+1}.$$ 
+
+So the convergence of the series reduces to the limit of $b_{N+1}$.
+
+\section*{Necessary Condition for Convergence}
+
+\begin{theorem}[Test for divergence]
+If the series $\sum a_n$ converges, then necessarily
+$$\lim_{n\to\infty} a_n = 0.$$ 
+\end{theorem}
+
+\begin{remark}
+This condition is necessary but not sufficient. For example,
+$$\sum_{n=1}^{\infty} \frac{1}{n}$$
+diverges even though $1/n\to 0$.
+\end{remark}

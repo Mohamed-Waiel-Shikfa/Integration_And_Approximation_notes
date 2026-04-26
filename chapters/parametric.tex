@@ -1,0 +1,38 @@
+\chapter*{Parametric Curves}
+\addcontentsline{toc}{chapter}{Parametric Curves}
+
+\section*{Definition}
+
+A parametric curve is described by two equations
+$$x=f(t), \qquad y=g(t),$$
+where $t$ is a parameter. As $t$ varies, the point $(x(t),y(t))$ traces a curve in the plane.
+
+This is more flexible than writing $y$ directly as a function of $x$, because many curves fail the vertical line test but still have simple parametric descriptions.
+
+\section*{Derivatives}
+
+If $x=f(t)$ and $y=g(t)$ are differentiable and $dx/dt\neq 0$, then the slope of the tangent line is
+$$\frac{dy}{dx} = \frac{dy/dt}{dx/dt}.$$ 
+
+\begin{remark}
+A horizontal tangent occurs when $dy/dt=0$ and $dx/dt\neq 0$. A vertical tangent occurs when $dx/dt=0$ and $dy/dt\neq 0$.
+\end{remark}
+
+\section*{Second Derivative}
+
+To study concavity, differentiate $dy/dx$ with respect to $t$ and divide by $dx/dt$:
+$$\frac{d^2y}{dx^2} = \frac{\dfrac{d}{dt}\left(\dfrac{dy}{dx}\right)}{dx/dt}.$$ 
+
+\section*{Area Under a Parametric Curve}
+
+If the curve is traced once from $t=\alpha$ to $t=\beta$ and $x$ is increasing, then
+$$A = \int y\,dx = \int_{\alpha}^{\beta} y(t)x'(t)\,dt.$$ 
+
+If $x'(t)$ changes sign, the formula still works algebraically, but interpretation should be made carefully.
+
+\section*{Arc Length}
+
+If a particle follows the parametric curve $x=f(t)$, $y=g(t)$, then the arc length from $t=\alpha$ to $t=\beta$ is
+$$L = \int_{\alpha}^{\beta} \sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}\,dt.$$ 
+
+This is the natural extension of the arc-length formula from ordinary Cartesian calculus.

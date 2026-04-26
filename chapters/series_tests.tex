@@ -1,0 +1,54 @@
+\chapter*{Convergence Tests for Positive-Term Series}
+\addcontentsline{toc}{chapter}{Convergence Tests for Positive-Term Series}
+
+\section*{The Integral Test}
+
+Suppose $a_n=f(n)$ where $f$ is positive, continuous, and decreasing for $x\ge N$. Then the series and the corresponding improper integral behave the same way.
+
+\begin{theorem}[Integral Test]
+If $f(n)=a_n$ and $f$ is positive, continuous, and decreasing on $[N,\infty)$, then
+$$\sum_{n=N}^{\infty} a_n$$
+converges if and only if
+$$\int_N^{\infty} f(x)\,dx$$
+converges.
+\end{theorem}
+
+A classic application is the $p$-series
+$$\sum_{n=1}^{\infty} \frac{1}{n^p}.$$ 
+Using the integral test together with the improper integral $\int_1^{\infty}x^{-p}\,dx$, we obtain:
+
+\begin{theorem}[$p$-series test]
+The series
+$$\sum_{n=1}^{\infty} \frac{1}{n^p}$$
+converges if $p>1$ and diverges if $p\le 1$.
+\end{theorem}
+
+\section*{Direct Comparison Test}
+
+When $0\le a_n\le b_n$, the larger series controls the smaller one.
+
+\begin{theorem}[Direct Comparison]
+Assume $0\le a_n\le b_n$ for all sufficiently large $n$.
+\begin{itemize}
+    \item If $\sum b_n$ converges, then $\sum a_n$ converges.
+    \item If $\sum a_n$ diverges, then $\sum b_n$ diverges.
+\end{itemize}
+\end{theorem}
+
+This test is most effective when we can compare with a geometric series or a $p$-series.
+
+\section*{Limit Comparison Test}
+
+Sometimes direct inequalities are awkward, but the terms have the same asymptotic size.
+
+\begin{theorem}[Limit Comparison]
+Let $a_n>0$ and $b_n>0$. If
+$$\lim_{n\to\infty}\frac{a_n}{b_n} = c$$
+for some constant $c$ with $0<c<\infty$, then either both series
+$$\sum a_n, \qquad \sum b_n$$
+converge, or both diverge.
+\end{theorem}
+
+\begin{remark}
+Limit comparison is especially useful for rational expressions in $n$. In practice, one often compares using only the highest powers in the numerator and denominator.
+\end{remark}

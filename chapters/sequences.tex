@@ -1,0 +1,67 @@
+\chapter*{Sequences}
+\addcontentsline{toc}{chapter}{Sequences}
+
+\section*{Definition and Point of View}
+
+A sequence is simply a function whose domain is the positive integers. We usually write it as
+$$\{a_n\}_{n=1}^{\infty} = a_1,a_2,a_3,\dots$$
+where $a_n$ is the $n$th term.
+
+The main question is: \emph{what happens to $a_n$ as $n\to\infty$?}
+
+\begin{definition}[Limit of a sequence]
+A sequence $\{a_n\}$ converges to $L$ if
+$$\lim_{n\to\infty} a_n = L.$$ 
+If no finite limit exists, the sequence diverges.
+\end{definition}
+
+\section*{Common Examples}
+
+\begin{itemize}
+    \item $a_n=\frac{1}{n}$ converges to $0$.
+    \item $a_n=\frac{n+1}{n}=1+\frac{1}{n}$ converges to $1$.
+    \item $a_n=(-1)^n$ does not settle to one number, so it diverges.
+    \item $a_n=n$ grows without bound, so it diverges to infinity.
+\end{itemize}
+
+\section*{Limit Laws for Sequences}
+
+If $a_n\to L$ and $b_n\to M$, then the same algebra of limits from ordinary calculus still works:
+\begin{align*}
+\lim_{n\to\infty}(a_n+b_n) &= L+M, \\
+\lim_{n\to\infty}(a_n b_n) &= LM, \\
+\lim_{n\to\infty}\frac{a_n}{b_n} &= \frac{L}{M} \qquad (M\neq 0).
+\end{align*}
+
+These rules let us treat many sequences exactly like rational functions in a continuous variable.
+
+\section*{The Squeeze Principle}
+
+If
+$$a_n \le b_n \le c_n$$
+for all sufficiently large $n$, and if
+$$\lim_{n\to\infty} a_n = \lim_{n\to\infty} c_n = L,$$
+then
+$$\lim_{n\to\infty} b_n = L.$$ 
+
+This is especially useful for sequences involving trigonometric expressions, for example
+$$-\frac{1}{n} \le \frac{\sin n}{n} \le \frac{1}{n},$$
+so $\sin n/n \to 0$.
+
+\section*{Monotone and Bounded Sequences}
+
+A sequence is called \textbf{increasing} if $a_{n+1}\ge a_n$ and \textbf{decreasing} if $a_{n+1}\le a_n$.
+
+\begin{theorem}[Monotone Convergence Theorem]
+If a sequence is monotone and bounded, then it converges.
+\end{theorem}
+
+This theorem is important because many recursively defined sequences are difficult to analyze directly, but easier to study using monotonicity and bounds.
+
+\section*{A Note on Recursively Defined Sequences}
+
+Some sequences are defined by a rule such as
+$$a_{n+1}=f(a_n).$$
+If we suspect $a_n\to L$, then taking limits on both sides often gives a fixed-point equation
+$$L=f(L).$$
+This does not prove convergence by itself, but it helps identify the only possible limit.
