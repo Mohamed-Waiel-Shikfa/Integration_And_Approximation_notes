@@ -5,6 +5,8 @@ This repository contains my personal notes for the course *21-122 Integration An
 The notes are based on the course material.
 
 ## Contents
+
+```
 .
 ├── chapters                // Contains latex notes of each lecture
 ├── cheatsheet              // Condensed 8 pages of the material
@@ -18,6 +20,7 @@ The notes are based on the course material.
 │   ├── notes.tex
 │   └── preamble.tex
 └── README.md
+```
 
 ## About the Notes
 
